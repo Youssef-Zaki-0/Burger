@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>فاير برجر | Fire Burger - أقوى برجر مشوي على اللهب</title>
+  <meta name="description" content="فاير برجر - برجر مشوي على اللهب المباشر. اطلب دليفري الآن في مدينة نصر والمعادي والتجمع." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { cairo: ['Cairo', 'sans-serif'] },
+          colors: {
+            coal: { 900: '#0d0d0d', 800: '#151515', 700: '#1f1f1f', 600: '#2a2a2a' },
+            fire: { 400: '#ff8a3d', 500: '#ff6a13', 600: '#e5530a' },
+            gold: { 400: '#ffd23f', 500: '#f5b800' }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Cairo', sans-serif; background: #0d0d0d; }
+    .fire-text {
+      background: linear-gradient(90deg, #ffd23f, #ff6a13);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .hero-overlay {
+      background:
+        linear-gradient(to left, rgba(13,13,13,.55), rgba(13,13,13,.92)),
+        radial-gradient(circle at 80% 30%, rgba(255,106,19,.35), transparent 55%);
+    }
+    .card { transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
+    .card:hover { transform: translateY(-8px); box-shadow: 0 20px 45px -15px rgba(255,106,19,.45); border-color: rgba(255,106,19,.6); }
+    .card img { transition: transform .5s ease; }
+    .card:hover img { transform: scale(1.08); }
+    @keyframes flicker { 0%,100% { transform: scale(1) rotate(-2deg); } 50% { transform: scale(1.12) rotate(2deg); } }
+    .flame { display: inline-block; animation: flicker 1.4s ease-in-out infinite; }
+    @keyframes pulse-ring {
+      0% { box-shadow: 0 0 0 0 rgba(255,106,19,.65); }
+      70% { box-shadow: 0 0 0 16px rgba(255,106,19,0); }
+      100% { box-shadow: 0 0 0 0 rgba(255,106,19,0); }
+    }
+    .pulse { animation: pulse-ring 2s infinite; }
+  </style>
+</head>
+
+<body class="text-zinc-200 antialiased">
+
+  <!-- ============ Navbar ============ -->
+  <header class="sticky top-0 z-40 bg-coal-900/90 backdrop-blur border-b border-white/10">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="#home" class="text-2xl font-black">
+        <span class="flame">🔥</span> <span class="fire-text">فاير برجر</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8 text-sm font-bold text-zinc-300">
+        <a href="#menu" class="hover:text-fire-500 transition">المنيو</a>
+        <a href="#offers" class="hover:text-fire-500 transition">العروض</a>
+        <a href="#branches" class="hover:text-fire-500 transition">الفروع</a>
+      </div>
+      <a href="tel:19999" class="bg-fire-500 hover:bg-fire-600 text-white text-sm font-extrabold px-4 py-2 rounded-full transition">
+        📞 <span dir="ltr">19999</span>
+      </a>
+    </nav>
+  </header>
+
+  <!-- ============ Hero ============ -->
+  <section id="home" class="relative overflow-hidden">
+    <img
+      src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1600&q=80"
+      onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1600&q=80';"
+      alt="برجر مشوي على اللهب من فاير برجر"
+      class="absolute inset-0 w-full h-full object-cover" />
+    <div class="hero-overlay absolute inset-0"></div>
+
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 py-20 sm:py-28 md:py-36">
+      <div class="max-w-2xl text-center md:text-right">
+        <span class="inline-block bg-fire-500/15 border border-fire-500/40 text-gold-400 text-xs sm:text-sm font-bold px-4 py-1.5 rounded-full mb-6">
+          🔥 مشوي على اللهب المباشر 100%
+        </span>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight text-white">
+          أقوى برجر مشوي <br />
+          <span class="fire-text">على اللهب في مصر</span>
+        </h1>
+        <p class="mt-6 text-base sm:text-lg text-zinc-300 leading-8">
+          لحم بقري طازج، يتشوي قدامك على نار حقيقية، وبيتقدم سخن مع صوصاتنا السرية. طعم دخاني مميز مفيش زيه.
+        </p>
+        <div class="mt-9 flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+          <a href="https://wa.me/201501110777?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%B7%D9%84%D8%A8%20%D8%AF%D9%84%D9%8A%D9%81%D8%B1%D9%8A%20%D9%85%D9%86%20%D9%81%D8%A7%D9%8A%D8%B1%20%D8%A8%D8%B1%D8%AC%D8%B1"
+             target="_blank" rel="noopener"
+             class="pulse inline-flex items-center justify-center gap-3 bg-gradient-to-l from-fire-500 to-fire-600 hover:from-fire-400 hover:to-fire-500 text-white text-lg font-extrabold px-9 py-4 rounded-2xl shadow-lg shadow-fire-500/30 transition transform hover:scale-105">
+             اطلب دليفري الآن
+          </a>
+          <a href="#menu" class="inline-flex items-center justify-center border-2 border-gold-400 text-gold-400 hover:bg-gold-400 hover:text-coal-900 font-extrabold px-9 py-4 rounded-2xl transition">
+            شوف المنيو
+          </a>
+        </div>
+        <div class="mt-10 flex items-center gap-6 justify-center md:justify-start text-sm font-bold">
+          <div><span class="block text-2xl font-black text-gold-400">30 د</span>توصيل سريع</div>
+          <div class="w-px h-10 bg-white/20"></div>
+          <div><span class="block text-2xl font-black text-gold-400">100%</span>لحم بلدي طازج</div>
+          <div class="w-px h-10 bg-white/20"></div>
+          <div><span class="block text-2xl font-black text-gold-400">3</span>فروع</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Best Sellers ============ -->
+  <section id="menu" class="py-16 md:py-24 bg-coal-900">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-fire-500 font-extrabold text-sm">🔥 المنيو</span>
+        <h2 class="mt-2 text-3xl sm:text-4xl font-black text-white">الأكثر <span class="fire-text">مبيعاً</span></h2>
+        <p class="mt-4 text-zinc-400 leading-8">وجبات الزباين المفضلة، كل وجبة مع بطاطس مقرمشة ومشروب.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <!-- Meal 1 -->
+        <article class="card bg-coal-800 border border-white/10 rounded-3xl overflow-hidden flex flex-col">
+          <div class="overflow-hidden h-48">
+            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1600&q=80" alt="كلاسيك فاير" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="p-5 flex flex-col flex-1">
+            <h3 class="text-xl font-black text-white">كلاسيك فاير</h3>
+            <p class="mt-2 text-sm text-zinc-400 leading-7 flex-1">قطعة لحم 150 جم مشوية، جبنة شيدر، خس، طماطم، مخلل، وصوص فاير الخاص.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="text-2xl font-black text-gold-400">145 <span class="text-sm font-bold">ج.م</span></span>
+              <span class="text-xs text-fire-400 font-bold">🔥 الأكثر طلباً</span>
+            </div>
+            <a href="https://wa.me/201501110777?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B7%D9%84%D8%A8%20%D9%88%D8%AC%D8%A8%D8%A9%3A%20%D9%83%D9%84%D8%A7%D8%B3%D9%8A%D9%83%20%D9%81%D8%A7%D9%8A%D8%B1%20-%20145%20%D8%AC%D9%86%D9%8A%D9%87"
+               target="_blank" rel="noopener"
+               class="mt-4 text-center bg-fire-500 hover:bg-fire-600 text-white font-extrabold py-3 rounded-xl transition">
+              اطلب الوجبة
+            </a>
+          </div>
+        </article>
+
+        <!-- Meal 2 -->
+        <article class="card bg-coal-800 border border-white/10 rounded-3xl overflow-hidden flex flex-col">
+          <div class="overflow-hidden h-48">
+            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80" alt="دبل ديمو برجر" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="p-5 flex flex-col flex-1">
+            <h3 class="text-xl font-black text-white">دبل ديمو</h3>
+            <p class="mt-2 text-sm text-zinc-400 leading-7 flex-1">قطعتين لحم مشوي، جبنة شيدر دبل، بصل مكرمل، مشروم، وصوص باربكيو دخاني.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="text-2xl font-black text-gold-400">195 <span class="text-sm font-bold">ج.م</span></span>
+              <span class="text-xs text-fire-400 font-bold">🔥 للجعانين</span>
+            </div>
+            <a href="https://wa.me/201501110777?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B7%D9%84%D8%A8%20%D9%88%D8%AC%D8%A8%D8%A9%3A%20%D8%AF%D8%A8%D9%84%20%D8%AF%D9%8A%D9%85%D9%88%20-%20195%20%D8%AC%D9%86%D9%8A%D9%87"
+               target="_blank" rel="noopener"
+               class="mt-4 text-center bg-fire-500 hover:bg-fire-600 text-white font-extrabold py-3 rounded-xl transition">
+              اطلب الوجبة
+            </a>
+          </div>
+        </article>
+
+        <!-- Meal 3 -->
+        <article class="card bg-coal-800 border border-white/10 rounded-3xl overflow-hidden flex flex-col">
+          <div class="overflow-hidden h-48">
+            <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?auto=format&fit=crop&w=800&q=80" alt="سبايسي إنفرنو برجر" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="p-5 flex flex-col flex-1">
+            <h3 class="text-xl font-black text-white">سبايسي إنفرنو</h3>
+            <p class="mt-2 text-sm text-zinc-400 leading-7 flex-1">لحم مشوي، جبنة بيبر جاك، هالابينو، بصل مقرمش، وصوص الشطة الحارة.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="text-2xl font-black text-gold-400">165 <span class="text-sm font-bold">ج.م</span></span>
+              <span class="text-xs text-fire-400 font-bold">🌶️ حار جداً</span>
+            </div>
+            <a href="https://wa.me/201501110777?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B7%D9%84%D8%A8%20%D9%88%D8%AC%D8%A8%D8%A9%3A%20%D8%B3%D8%A8%D8%A7%D9%8A%D8%B3%D9%8A%20%D8%A5%D9%86%D9%81%D8%B1%D9%86%D9%88%20-%20165%20%D8%AC%D9%86%D9%8A%D9%87"
+               target="_blank" rel="noopener"
+               class="mt-4 text-center bg-fire-500 hover:bg-fire-600 text-white font-extrabold py-3 rounded-xl transition">
+              اطلب الوجبة
+            </a>
+          </div>
+        </article>
+
+        <!-- Meal 4 -->
+        <article class="card bg-coal-800 border border-white/10 rounded-3xl overflow-hidden flex flex-col">
+          <div class="overflow-hidden h-48">
+            <img src="https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?auto=format&fit=crop&w=800&q=80" alt="تشيكن كرانش برجر" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="p-5 flex flex-col flex-1">
+            <h3 class="text-xl font-black text-white">تشيكن كرانش</h3>
+            <p class="mt-2 text-sm text-zinc-400 leading-7 flex-1">صدر فراخ مقرمش، جبنة موزاريلا، خس، مخلل، وصوص رانش كريمي.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="text-2xl font-black text-gold-400">130 <span class="text-sm font-bold">ج.م</span></span>
+              <span class="text-xs text-fire-400 font-bold">⭐ مفضل الأطفال</span>
+            </div>
+            <a href="https://wa.me/201501110777?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B7%D9%84%D8%A8%20%D9%88%D8%AC%D8%A8%D8%A9%3A%20%D8%AA%D8%B4%D9%8A%D9%83%D9%86%20%D9%83%D8%B1%D8%A7%D9%86%D8%B4%20-%20130%20%D8%AC%D9%86%D9%8A%D9%87"
+               target="_blank" rel="noopener"
+               class="mt-4 text-center bg-fire-500 hover:bg-fire-600 text-white font-extrabold py-3 rounded-xl transition">
+              اطلب الوجبة
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Offers ============ -->
+  <section id="offers" class="py-16 md:py-24 bg-coal-800 relative overflow-hidden">
+    <div class="absolute -top-24 -right-20 w-80 h-80 bg-fire-500/15 rounded-full blur-3xl"></div>
+    <div class="absolute -bottom-24 -left-20 w-80 h-80 bg-gold-400/10 rounded-full blur-3xl"></div>
+
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-gold-400 font-extrabold text-sm">💰 باكيدجات التوفير</span>
+        <h2 class="mt-2 text-3xl sm:text-4xl font-black text-white">عروض <span class="fire-text">الصحاب</span></h2>
+        <p class="mt-4 text-zinc-400 leading-7">اجمع صحابك ووفّر أكتر مع عروضنا الجماعية.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <!-- Offer 1 -->
+        <div class="card bg-coal-900 border border-white/10 rounded-3xl p-7 text-center">
+          <div class="text-5xl mb-3">👫</div>
+          <h3 class="text-2xl font-black text-white">باكج الاتنين</h3>
+          <p class="mt-3 text-sm text-zinc-400 leading-7">2 كلاسيك فاير + 2 بطاطس + 2 مشروب</p>
+          <div class="mt-5">
+            <span class="text-zinc-500 line-through text-lg">340 ج.م</span>
+            <span class="block text-4xl font-black text-gold-400 mt-1">279 <span class="text-base">ج.م</span></span>
+          </div>
+          <a href="https://wa.me/201501110777?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B7%D9%84%D8%A8%20%D8%B9%D8%B1%D8%B6%3A%20%D8%A8%D8%A7%D9%83%D8%AC%20%D8%A7%D9%84%D8%A7%D8%AA%D9%86%D9%8A%D9%86%20-%20279%20%D8%AC%D9%86%D9%8A%D9%87"
+             target="_blank" rel="noopener"
+             class="mt-6 inline-block w-full bg-fire-500 hover:bg-fire-600 text-white font-extrabold py-3 rounded-xl transition">اطلب العرض</a>
+        </div>
+
+        <!-- Offer 2 (featured) -->
+        <div class="card relative bg-gradient-to-b from-fire-500/20 to-coal-900 border-2 border-fire-500 rounded-3xl p-7 text-center md:-translate-y-3">
+          <span class="absolute -top-3.5 right-1/2 translate-x-1/2 bg-gold-400 text-coal-900 text-xs font-black px-4 py-1 rounded-full whitespace-nowrap">⭐ الأوفر</span>
+          <div class="text-5xl mb-3">🍔🍔🍔🍔</div>
+          <h3 class="text-2xl font-black text-white">باكج الشلة</h3>
+          <p class="mt-3 text-sm text-zinc-300 leading-7">4 برجر (اختار من المنيو) + 4 بطاطس + 4 مشروب + أصابع موزاريلا</p>
+          <div class="mt-5">
+            <span class="text-zinc-500 line-through text-lg">720 ج.م</span>
+            <span class="block text-4xl font-black text-gold-400 mt-1">549 <span class="text-base">ج.م</span></span>
+          </div>
+          <a href="https://wa.me/201501110777?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B7%D9%84%D8%A8%20%D8%B9%D8%B1%D8%B6%3A%20%D8%A8%D8%A7%D9%83%D8%AC%20%D8%A7%D9%84%D8%B4%D9%84%D8%A9%20-%20549%20%D8%AC%D9%86%D9%8A%D9%87"
+             target="_blank" rel="noopener"
+             class="mt-6 inline-block w-full bg-gradient-to-l from-fire-500 to-fire-600 hover:from-fire-400 hover:to-fire-500 text-white font-extrabold py-3 rounded-xl transition">اطلب العرض</a>
+        </div>
+
+        <!-- Offer 3 -->
+        <div class="card bg-coal-900 border border-white/10 rounded-3xl p-7 text-center">
+          <div class="text-5xl mb-3">🎉</div>
+          <h3 class="text-2xl font-black text-white">باكج العيلة</h3>
+          <p class="mt-3 text-sm text-zinc-400 leading-7">6 برجر + 6 بطاطس + 6 مشروب + 12 قطعة ناجتس</p>
+          <div class="mt-5">
+            <span class="text-zinc-500 line-through text-lg">1,150 ج.م</span>
+            <span class="block text-4xl font-black text-gold-400 mt-1">849 <span class="text-base">ج.م</span></span>
+          </div>
+          <a href="https://wa.me/201501110777?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B7%D9%84%D8%A8%20%D8%B9%D8%B1%D8%B6%3A%20%D8%A8%D8%A7%D9%83%D8%AC%20%D8%A7%D9%84%D8%B9%D9%8A%D9%84%D8%A9%20-%20849%20%D8%AC%D9%86%D9%8A%D9%87"
+             target="_blank" rel="noopener"
+             class="mt-6 inline-block w-full bg-fire-500 hover:bg-fire-600 text-white font-extrabold py-3 rounded-xl transition">اطلب العرض</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Branches ============ -->
+  <section id="branches" class="py-16 md:py-24 bg-coal-900">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-fire-500 font-extrabold text-sm">📍 فروعنا</span>
+        <h2 class="mt-2 text-3xl sm:text-4xl font-black text-white">قريبين <span class="fire-text">منك</span></h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="card bg-coal-800 border border-white/10 rounded-3xl p-7 text-center">
+          <div class="w-14 h-14 mx-auto rounded-2xl bg-fire-500/15 text-3xl flex items-center justify-center mb-4">📍</div>
+          <h3 class="text-xl font-black text-white">فرع مدينة نصر</h3>
+          <p class="mt-2 text-sm text-zinc-400 leading-7">مدينة نصر - القاهرة<br />يومياً من 12 ظهراً حتى 2 صباحاً</p>
+        </div>
+        <div class="card bg-coal-800 border border-white/10 rounded-3xl p-7 text-center">
+          <div class="w-14 h-14 mx-auto rounded-2xl bg-fire-500/15 text-3xl flex items-center justify-center mb-4">📍</div>
+          <h3 class="text-xl font-black text-white">فرع المعادي</h3>
+          <p class="mt-2 text-sm text-zinc-400 leading-7">المعادي - القاهرة<br />يومياً من 12 ظهراً حتى 2 صباحاً</p>
+        </div>
+        <div class="card bg-coal-800 border border-white/10 rounded-3xl p-7 text-center">
+          <div class="w-14 h-14 mx-auto rounded-2xl bg-fire-500/15 text-3xl flex items-center justify-center mb-4">📍</div>
+          <h3 class="text-xl font-black text-white">فرع التجمع</h3>
+          <p class="mt-2 text-sm text-zinc-400 leading-7">التجمع الخامس - القاهرة الجديدة<br />يومياً من 12 ظهراً حتى 3 صباحاً</p>
+        </div>
+      </div>
+
+      <!-- Hotline -->
+      <div class="mt-10 bg-gradient-to-l from-fire-600 to-fire-500 rounded-3xl p-8 sm:p-10 text-center text-white shadow-xl shadow-fire-500/20">
+        <p class="font-bold text-fire-50/90">جعان؟ كلمنا على الخط الساخن</p>
+        <a href="tel:19999" class="block mt-2 text-5xl sm:text-6xl font-black text-white hover:text-gold-400 transition" dir="ltr">19999</a>
+        <p class="mt-2 text-sm text-fire-50/80">دليفري لحد باب البيت في أقل من 30 دقيقة 🛵</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Footer ============ -->
+  <footer class="bg-black border-t border-white/10 py-8 text-center">
+    <p class="text-xl font-black"><span class="flame">🔥</span> <span class="fire-text">فاير برجر - Fire Burger</span></p>
+    <p class="mt-2 text-xs text-zinc-500">© <span id="year"></span> جميع الحقوق محفوظة.</p>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/201501110777?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%B7%D9%84%D8%A8%20%D9%85%D9%86%20%D9%81%D8%A7%D9%8A%D8%B1%20%D8%A8%D8%B1%D8%AC%D8%B1"
+     target="_blank" rel="noopener" aria-label="اطلب عبر واتساب"
+     class="pulse fixed bottom-5 left-5 z-50 w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-green-500 hover:bg-green-600 text-white flex items-center justify-center shadow-xl transition transform hover:scale-110">
+    <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11.9 11.9 0 0 0 12 0C5.400 0 0 5.400 0 12c0 2.100.600 4.200 1.600 6L0 24l6.200-1.600A12 12 0 0 0 12 24c6.600 0 12-5.400 12-12 0-3.200-1.200-6.200-3.500-8.500zM12 22a10 10 0 0 1-5.100-1.400l-.4-.2-3.700 1 1-3.600-.2-.4A10 10 0 1 1 12 22zm5.500-7.500c-.3-.2-1.800-.9-2-1s-.5-.2-.7.200-.8 1-.9 1.200-.3.200-.6.100a8.200 8.200 0 0 1-4-3.500c-.3-.5.300-.5.900-1.600.1-.2 0-.4 0-.5l-.9-2.200c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.100-.8.400s-1 1-1 2.500 1.100 2.900 1.200 3.100 2.100 3.200 5.100 4.500c.7.300 1.300.5 1.700.6.700.2 1.400.2 1.900.1.600-.1 1.800-.7 2-1.400s.2-1.300.2-1.400-.3-.2-.6-.4z"/></svg>
+  </a>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
